@@ -133,28 +133,35 @@ function generatePassword() {
   var options = getPasswordOptions();
   if(!options){
     return "";
-}
+  }
 
-//Generating a var for the password, also declared later in the code but needs to be started here I think? Also saving our options from earlier into an array of characters available to form the new password from.
-var password= "";
-var availableCharacters = [];
+  //Generating a var for the password, also declared later in the code but needs to be started here I think? Also saving our options from earlier into an array of characters available to form the new password from.
+  var password= "";
+  var availableCharacters = [];
 
-if (options.hasLowerCaseCharacters) {
-  availableCharacters = availableCharacters.concat(lowerCasedCharacters);
+  if (options.hasLowerCaseCharacters) {
+    availableCharacters = availableCharacters.concat(lowerCasedCharacters);
   }
   
-if (options.hasUpperCaseCharacters) {
-  availableCharacters = availableCharacters.concat(upperCasedCharacters);
+  if (options.hasUpperCaseCharacters) {
+    availableCharacters = availableCharacters.concat(upperCasedCharacters);
   }
 
-if (options.hasNumericCharacters) {
+  if (options.hasNumericCharacters) {
     availableCharacters = availableCharacters.concat(numericCharacters);
+  }
+
+  if (options.hasSpecialCharacters) {
+    availableCharacters = availableCharacters.concat(specialCharacters);
+  }
+
+    //Checks the password length and randomly select characters from the available characters which then returns a password built with the choices defined previously.
+    for (var i = 0; i < options.length; i++) {
+      var randomCharacter = getRandom(availableCharacters);
+      password += randomCharacter;
     }
 
-if (options.hasSpecialCharacters) {
-  availableCharacters = availableCharacters.concat(specialCharacters);
-  }
-
+  return password;
 }
 
 //These last bits at the bottom are fine - no change needed.
