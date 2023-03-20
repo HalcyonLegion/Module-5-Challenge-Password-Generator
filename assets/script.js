@@ -91,7 +91,6 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   var length = parseInt(prompt("Enter the desired length of your password (between 8 and 128 characters):"));
-}
 
   // Validate the length of the input
   if (isNaN(length) || length < 8 || length > 128) {
@@ -105,15 +104,36 @@ function getPasswordOptions() {
   var hasNumericCharacters = confirm("Do you want to include numeric characters?");
   var hasSpecialCharacters = confirm("Do you want to include special characters?");
 
-// Function for getting a random element from an array
-function getRandom(arr) {
 
+  // Validate that at least one character type is selected
+  if (!hasLowerCaseCharacters && !hasUpperCaseCharacters && !hasNumericCharacters && !hasSpecialCharacters) {
+    alert("At least one character type must be selected!");
+    return null;
+  }
+  
+  // Return an object with the selected options
+  return {
+    length: length,
+    hasSpecialCharacters: hasSpecialCharacters,
+    hasNumericCharacters: hasNumericCharacters,
+    hasLowerCaseCharacters: hasLowerCaseCharacters,
+    hasUpperCaseCharacters: hasUpperCaseCharacters
+  };
+}
+
+
+// Function for getting a random element from an array - This is actually ok??
+function getRandom(arr) {
+  var randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
 }
 
 // Function to generate password with user input
 function generatePassword() {
 
 }
+
+//These last bits at the bottom are fine - no change needed.
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
