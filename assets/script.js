@@ -134,6 +134,10 @@ function generatePassword() {
   if(!options){
     return "";
 }
+
+var password= "";
+var availableCharacters = [];
+
 }
 
 //These last bits at the bottom are fine - no change needed.
