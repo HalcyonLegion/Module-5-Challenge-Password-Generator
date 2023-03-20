@@ -93,8 +93,17 @@ function getPasswordOptions() {
   var length = parseInt(prompt("Enter the desired length of your password (between 8 and 128 characters):"));
 }
 
+  // Validate the length of the input
+  if (isNaN(length) || length < 8 || length > 128) {
+    alert("Invalid password length. Please enter a number between 8 and 128.");
+    return null;
+  }
 
-
+  // Confirmations for the parameters I will eventually be asking for.
+  var hasLowerCaseCharacters = confirm("Do you want to include lowercase characters?");
+  var hasUpperCaseCharacters = confirm("Do you want to include uppercase characters?");
+  var hasNumericCharacters = confirm("Do you want to include numeric characters?");
+  var hasSpecialCharacters = confirm("Do you want to include special characters?");
 
 // Function for getting a random element from an array
 function getRandom(arr) {
