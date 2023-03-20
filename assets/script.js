@@ -135,8 +135,25 @@ function generatePassword() {
     return "";
 }
 
+//Generating a var for the password, also declared later in the code but needs to be started here I think? Also saving our options from earlier into an array of characters available to form the new password from.
 var password= "";
 var availableCharacters = [];
+
+if (options.hasLowerCaseCharacters) {
+  availableCharacters = availableCharacters.concat(lowerCasedCharacters);
+  }
+  
+if (options.hasUpperCaseCharacters) {
+  availableCharacters = availableCharacters.concat(upperCasedCharacters);
+  }
+
+if (options.hasNumericCharacters) {
+    availableCharacters = availableCharacters.concat(numericCharacters);
+    }
+
+if (options.hasSpecialCharacters) {
+  availableCharacters = availableCharacters.concat(specialCharacters);
+  }
 
 }
 
