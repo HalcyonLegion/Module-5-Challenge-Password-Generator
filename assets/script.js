@@ -130,7 +130,10 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-
+  var options = getPasswordOptions();
+  if(!options){
+    return "";
+}
 }
 
 //These last bits at the bottom are fine - no change needed.
