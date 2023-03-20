@@ -16,21 +16,36 @@ Please visit this URL to see how the website looks now: https://halcyonlegion.gi
 
 ## Usage
 
-The Challenge is comprised of 3 files. I revised the structure to bring it inline with what I have learned, I included the CSS and JS in the assets folder. The HTML provides an interface for the user to see the result of the application.
+The Challenge is comprised of 3 files. I revised the structure to bring it inline with what I have learned, I included the Images, CSS and JS in the assets folder. The HTML provides an interface for the user to see the result of the application the JavaScript drives this entire operation.
 
-![Landing](images/open-console.png)
+Upon first loading the generator it will appear like this this. To start things off click the "Generate Password" button:
 
-The Console is accessed through the browser and contains the output of the JavaScript I wrote.
+![Landing](./assets/images/landing-page.png)
 
-![FullPage](images/fullpage.png)
+When you do so it will prompt you for the aforementioned options: Length, Lowercase Characters, Uppercase Characters, Numeric characters and Special characters:
 
-Closer look at the Console reveals the output.
+![Prompts-Length](./assets/images/Click-generate-to-begin.png)
+![Prompts-Lower](./assets/images/lowercase.png)
+![Prompts-Upper](./assets/images/uppercase.png)
+![Prompts-Numeric](./assets/images/numeric.png)
+![Prompts-Special](./assets/images/special.png)
 
-![Console](images/consoleresults.png)
+Once you have selected your options then the JavaScript will do its thing and produce a password to your specification:
+
+![Result](./assets/images/result.png)
+
+There is validation at each step, for example if you choose an invalid length:
+
+![Invalid-Length](./assets/images/validation-length.png)
+![Invalid-Length2](./assets/images/validation-length2.png)
+
+And if you fail to choose any of the Character Types:
+
+![Invalid-Chars](./assets/images/validation-chars.png)
 
 ## Credits
 
-Roger Le the Instructor for this Bootcamp who has provided a lot of instruction and guidance on the journey so far. JavaScript is my biggest hurdle as I cannot easily work with complex Math functions in my head so I found this incredibly difficult.
+Roger Le the Instructor for this Bootcamp who has provided a lot of instruction and guidance on the journey so far. JavaScript continues to be my biggest hurdle as I found this extremely difficult, the fact I had done something very loosely similar to this in the past helped a lot but if I was looking at this for the first time I'd be completely lost. Thankfully this course has taught me how to use every single tool at my disposal to complete a challenge.
 
 The University of Birmingham provided the materials and guides I used to get this started: https://www.birmingham.ac.uk/index.aspx
 
